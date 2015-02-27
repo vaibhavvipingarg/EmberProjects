@@ -1,7 +1,7 @@
 App = Ember.Application.create();
 
 var cb = new Codebird;
-cb.setConsumerKey("OwCupIp1F3zHXmi7brKw11BIA", "LM6vIF3rO2dxpdNLlMsliVwj0tTTol06vLuag6LQrFo1t7HnTK");
+cb.setConsumerKey("CANvj21FrbUgRJx9Wwr3Pf5NX", "tj9Bsa97jofWUWgozAbsEAAzz3ae9uYtyDhlcbLmN1fn9B1DaJ");
 cb.__call(
     "oauth2_token",
     {},
