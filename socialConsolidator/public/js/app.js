@@ -26,6 +26,12 @@ App.Router.map(function() {
   });
 });
 
+App.IndexRoute = Ember.Route.extend({
+  beforeModel: function() {
+    this.transitionTo('connector');
+  }
+});
+
 App.ArtistsRoute = Ember.Route.extend({
     counter : 0,
     renderTemplate: function() {
