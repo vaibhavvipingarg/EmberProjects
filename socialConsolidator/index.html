@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <div class="container">
+      <div class="page-header">
+        {{#link-to "index"}}
+          <h1>The Consolidator<small> for social doze.</small></h1>
+        {{/link-to}}
+      </div>
+      <div class="row">
+        {{outlet}}
+      </div>
+    </div>
+  </script>
+
+ <script type="text/x-handlebars" id="artists">
+    <div id = "artistsContainer" class="span4">
+      <div class="list-group">
+        <div class="list-group-item">
+          {{input type="text" class="new-artist" placeholder="New Artist" value=newName insert-newline="createArtist" }}
+          <button class="new-artist-button btn-primary btn-sm" {{action "createArtist"}}
+            {{bind-attr disabled=disabled}}>Add</button>
+        </div>
+
+      <div class="bs-example">
+        <ul id = "connectorTabs" class="nav nav-tabs">
+          <li class="active connector" {{action "changeConnector" '0'}}>{{#link-to "connector"}}Youtube{{/link-to}}</li>
+          <li class="connector" {{action "changeConnector" '1'}}>{{#link-to "connector"}}Twitter{{/link-to}}</li>
+          <li class="connector"{{action "changeConnector" '2'}}>{{#link-to "connector"}}Facebook{{/link-to}}</li>
+        </ul>
+      </div>
+        {{outlet connector}}
+      </div>
+    </div>
+    <div class="span8">
+        {{outlet post}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="connector">
+    {{#each model}}
+        <div class="list-group-item list-item">
+          {{#link-to "post" this class="list-group-item artist-link"}}
+            {{title}}
+            <span class="pointer glyphicon glyphicon-chevron-right"></span>
+          {{/link-to}}
+        </div>
+    {{/each}}
+  </script>
+
+  <script type="text/x-handlebars" id="post">
+    <h1>{{model.title}}</h1>
+    <hr>
+    {{#each item in model.results}}
+      <div class='intro'>
+        {{item.title}}
+      </div>
+      <div class='below-the-fold'>
+        {{item.description}}
+      </div>
+      <hr>
+    {{/each}}
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script type="text/javascript" src="js/libs/codebird.js"></script>
+  <script src="js/app.js"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
