@@ -9,5 +9,5 @@ This application could be particularly useful for someone on social media market
 The file structure here is a little weird because I wanted to host the static rack on heroku.
 
 Here is a hosted link for the demo:
-https://socialconsolidator.herokuapp.com/#/artists/
+https://socialconsolidator.herokuapp.com
 
