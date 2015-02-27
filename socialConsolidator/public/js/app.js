@@ -63,6 +63,7 @@ App.ArtistsRoute = Ember.Route.extend({
                     });
                   };
           currentModel.pushObject({
+            modelName: 'youtube',
             id: this.counter++,
             title: name,
             results: items
@@ -92,6 +93,7 @@ App.ArtistsRoute = Ember.Route.extend({
                     });
                   }
                   currentModel.pushObject({
+                  modelName: 'twitter',
                   id: this.counter++,
                   title: name,
                   results: items
@@ -127,6 +129,13 @@ App.ConnectorRoute = Ember.Route.extend({
         outlet: 'connector',
         into: 'artists'
     });
+         this.render('post:0', {
+        outlet: 'post',
+        into: 'artists'
+    });
+
+    //this.transitionTo('post:0');
+
     },
    actions: {
     changeConnector: function (newConnector) {
@@ -140,7 +149,7 @@ App.ConnectorRoute = Ember.Route.extend({
       $(items[newConnector]).addClass('active');
     }
    },
-   model: function() {
+   model: function(param) {
    	var currentView = consolidator.currentView;
    	var m = null;
    	switch(currentView) {

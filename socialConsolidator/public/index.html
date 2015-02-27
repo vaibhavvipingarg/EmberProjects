@@ -58,7 +58,14 @@
   </script>
 
   <script type="text/x-handlebars" id="post">
-    <h1>{{model.title}}</h1>
+  <div class = "row">
+    <div class = "span4">
+      <h1>{{model.title}}</h1>
+    </div>
+    <div class = "span4">
+      <div {{bind-attr class = "model.modelName"}}></div>
+    </div>
+  </div>
     <hr>
     {{#each item in model.results}}
       <div class='intro'>

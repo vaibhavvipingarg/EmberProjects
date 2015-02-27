@@ -14,7 +14,7 @@ html, body {
 
 .loading-message {
   text-align: center;
-  color: #aaa;
+  `lor: #aaa;
 }
 
 .spinner {
@@ -80,4 +80,16 @@ html, body {
 border-bottom: 1px solid #eeeeee;
 padding-top: 10px;
 padding-bottom: 5px;
+}
+.youtube {
+  background-image: url(../images/youtube.png);
+  float: right;
+  height: 64px;
+  width: 64px;
+}
+.twitter {
+  background-image: url(../images/twitter.png);
+  float: right;
+  height: 64px;
+  width: 64px;
 }
