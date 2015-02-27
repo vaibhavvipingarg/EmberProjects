@@ -68,12 +68,22 @@
   </div>
     <hr>
     {{#each item in model.results}}
-      <div class='intro'>
-        <h5>{{item.title}}</h5>
-      </div>
-      <div class='below-the-fold'>
-        {{item.description}}
-      </div>
+    <div class = "row">
+        <div class = "span2">
+          <img {{bindAttr src="item.thumbnail"}}></img> 
+        </div>
+        <div class = "span6">
+          <div class='intro'>
+            <h5>{{item.title}}</h5>
+          </div>
+          <div class='below-the-fold'>
+            {{item.description}}
+          </div>
+          <div class='below-the-fold'>
+            <h6>{{item.metric}}</h6>
+          </div>
+        </div>
+    </div>
       <hr>
     {{/each}}
   </script>

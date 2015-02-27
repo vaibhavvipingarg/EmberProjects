@@ -57,9 +57,12 @@ App.ArtistsRoute = Ember.Route.extend({
           var results = data.items;
           var items = [];
           for(var index = 0; index < results.length; index++){
+            var d = new Date(results[index].snippet.publishedAt);
                     items.pushObject({
                       title: results[index].snippet.title,
-                      description: results[index].snippet.description
+                      description: results[index].snippet.description,
+                      thumbnail: results[index].snippet.thumbnails.medium.url || results[index].snippet.thumbnails.high.url,
+                      metric: "Published at: " + d.toLocaleString()
                     });
                   };
           currentModel.pushObject({
@@ -89,7 +92,9 @@ App.ArtistsRoute = Ember.Route.extend({
                   for(var index = 0; index < statuses.length; index++){
                     items.pushObject({
                       title: statuses[index].user.name,
-                      description: statuses[index].text
+                      description: statuses[index].text,
+                      thumbnail: statuses[index].user.profile_image_url_https.replace("_normal", ""),
+                      metric: "Retweets: " + statuses[index].retweet_count
                     });
                   }
                   currentModel.pushObject({
