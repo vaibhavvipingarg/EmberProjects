@@ -26,7 +26,7 @@
     <div id = "artistsContainer" class="span4">
       <div class="list-group">
         <div class="list-group-item">
-          {{input type="text" class="new-artist" placeholder="New Artist" value=newName insert-newline="createArtist" }}
+          {{input type="text" class="new-artist" placeholder="Add something..." value=newName insert-newline="createArtist" }}
           <button class="new-artist-button btn-primary btn-sm" {{action "createArtist"}}
             {{bind-attr disabled=disabled}}>Add</button>
         </div>
