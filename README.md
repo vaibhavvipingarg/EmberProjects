@@ -7,4 +7,4 @@ You can add search terms just like in respective social media and you can get th
 This application could be particularly useful for someone on social media marketing etc where they need to constantly keep track of trending topics aand specific buzz words.
 
 Here is a link to the hosted demo:
-https://socialconsolidator.herokuapp.com/#/artists/
+https://socialconsolidator.herokuapp.com
